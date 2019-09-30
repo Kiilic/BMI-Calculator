@@ -120,11 +120,11 @@ tr:hover {background-color:#f5f5f5;}
                 </div>                  
                 <div class="form-group">
                         <label> Type in your height down below.&#128071; </label>
-                        <input type="text" name="" placeholder="Height in cm" required id="Height" class="form-control">
+                        <input type="text" name="" placeholder="Height in cm" required id="height" class="form-control">
                     </div>        
                     <div class="form-group">
                             <label> BMI value:</label>
-                            <input type="number" name="" id="bmivalue" class="form-control">
+                            <input type="number" name="" id="bmivalue" disabled class="form-control">
                         </div>        
                         <div class="form-group">
                             <button type="submit" class="btn btn-success" onclick="getbmivalue()"> Check BMI </button>
@@ -139,13 +139,10 @@ tr:hover {background-color:#f5f5f5;}
     </div>
     <script> 
     function getbmivalue(){
-    var Weight = document.getElementById ('Weight').value;
-    var Height = document.getElementById ('Height').value;
-    
-    Height = Height * 12;
-    Height = Height * 0.025; // now height in meter
+    var Weight = document.getElementById('weight').value;
+    var Height = document.getElementById('height').value;
 
-    var newbmivalue = Weight / (Height * Height)
+    var newbmivalue = Weight / (Height ** 2)
     console.log(newbmivalue)
     document.getElementById('bmivalue').value = newbmivalue; 
 
