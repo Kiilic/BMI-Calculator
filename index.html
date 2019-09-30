@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <title> BMI Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+    rel="css-stylesheet"
+    href="style.css"
+    />
+    <style>
+    table, th, td {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: left;
+}
+tr:hover {background-color:#f5f5f5;}
+.content-table {
+  position: absolute;
+  top: 16%;
+  right: 70;
+  width: 500px;
+  height: 100px;
+}
+.form-group{
+  position: relative;
+  left: -30%;
+  width: 300px;
+  height: 100px;
+  margin: 15px 5px 15px;
+}
+</style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-header text-center"> BMI Calculator </div>
+          <div class="card-body">
+              <form class="w-50 m-auto" onsubmit="return false">
+                <div>
+<div class="content-table">   
+  <table>
+    <span
+  <thead>
+    <tr>
+      <th>Category</th>
+       <th>BMI (kg/m2) </th><th></th>
+     </th></tr>
+      <tr>
+          <th></th>
+      <th>From</th>
+      <th>To</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>Very severly underweight</td>
+        <td></td>
+        <td>15</td>
+  </tr>
+  <tr>
+      <td>Severly underweight</td>
+      <td>15</td>
+      <td>16</td>
+</tr>
+<tr>
+    <td>Underweight</td>
+    <td>16</td>
+    <td>18,5</td>
+</tr>
+<tr>
+    <td>Normal (Healthy weight)</td>
+    <td>18,5</td>
+    <td>25</td>
+</tr>
+<tr>
+    <td>Overweight</td>
+    <td>25</td>
+    <td>30</td>
+</tr>
+<tr>
+  <td>Obese class 1 (Moderatly obese)</td>
+  <td>30</td>
+  <td>35</td>
+</tr>
+<tr>
+<td>Obese class 2 (Severly obese)</td>
+<td>35</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Obese class 3 (Very severly obese)</td>
+<td>40</td>
+<td>45</td>
+</tr>
+<tr>
+    <td>Obese class 4 (morbidly obese)</td>
+    <td>45</td>
+    <td>50</td>
+  </tr>
+  <tr>
+  <td>Obese class 5 (Super obese)</td>
+  <td>50</td>
+  <td>60</td>
+  </tr>
+  <tr>
+  <td>Obese class 6 (Hyper obese)</td>
+  <td>60</td>
+  <td></td>
+  </tr>
+</span>
+  </tbody>
+</table>
+</div>
+                <div class="form-group">
+                    <label> Type in your weight down below. &#128071; </label>
+                    <input type="number" name="" placeholder="Weight in Kg" required id="weight" class="form-control">
+                </div>                  
+                <div class="form-group">
+                        <label> Type in your height down below.&#128071; </label>
+                        <input type="text" name="" placeholder="Height in cm" required id="Height" class="form-control">
+                    </div>        
+                    <div class="form-group">
+                            <label> BMI value:</label>
+                            <input type="number" name="" id="bmivalue" class="form-control">
+                        </div>        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success" onclick="getbmivalue()"> Check BMI </button>
+                        </div>
+              </form> 
+              <form class="w-100" >
+                  <div class="card-footer text-center"></div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script> 
+    function getbmivalue(){
+    var Weight = document.getElementById ('Weight').value;
+    var Height = document.getElementById ('Height').value;
+    
+    Height = Height * 12;
+    Height = Height * 0.025; // now height in meter
+
+    var newbmivalue = Weight / (Height * Height)
+    console.log(newbmivalue)
+    document.getElementById('bmivalue').value = newbmivalue; 
+
+    }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
